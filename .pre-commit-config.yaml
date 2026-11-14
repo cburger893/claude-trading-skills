@@ -23,16 +23,19 @@ repos:
       # The FMP client templates carry a python3 shebang. On Windows, where
       # every file counts as executable, pre-commit reads it and tags them as
       # Python, but their @@...@@ placeholders are not valid Python.
+      # .claude/skills/ holds the vendored third-party Day Trader pack, kept
+      # byte-identical to upstream, so it is not reformatted or linted here.
       - id: ruff-check
         args: [--fix]
-        exclude: '\.tmpl$'
+        exclude: '\.tmpl$|^\.claude/skills/'
       - id: ruff-format
-        exclude: '\.tmpl$'
+        exclude: '\.tmpl$|^\.claude/skills/'
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
       - id: codespell
+        exclude: '^\.claude/skills/'
         args: [--skip, ".venv,*.json,*.csv,*.baseline,skill-packages,*.pyc,__pycache__,docs/Gemfile.lock",
                --ignore-words-list, "trough,ore,cna,acn,blok,hims,pont,claus,theses",
                --ignore-regex, "(Depósito|Deposito) inicial"]

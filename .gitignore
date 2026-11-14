@@ -19,7 +19,9 @@ env/
 # Tool configurations
 .idea/
 .vscode/
-.claude/
+.claude/*
+# Project-local Claude Code skills (Day Trader pack) are tracked
+!.claude/skills/
 .envrc
 .mcp.json
 

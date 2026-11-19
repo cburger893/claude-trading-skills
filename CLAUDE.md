@@ -257,6 +257,7 @@ The table below is **auto-generated** from `skills-index.yaml` by `scripts/gener
 | **FTD Detector** | ✅ Required | ❌ Not used | ❌ Not used | Daily QQQ/SPY OHLCV via FMP |
 | **FXMacroData Calendar** | ❌ Not used | ❌ Not used | ❌ Not used | FXMacroData REST API; public USD calendar rows work without a key |
 | **Finviz Screener** | ❌ Not used | 🟡 Optional | ❌ Not used | FINVIZ Elite API |
+| **FreeLLMAPI Proxy** | ❌ Not used | ❌ Not used | ❌ Not used | Self-hosted FreeLLMAPI server (Node.js 20+) plus the user's own free-tier provider keys; no FMP, FINVIZ or Alpaca |
 | **Futures Position Sizer** | ❌ Not used | ❌ Not used | ❌ Not used | Pure calculation; consumes contrarian-setup-gate's READY_FOR_PLAN report or explicit direction/entry/stop flags; works offline |
 | **IBD Distribution Day Monitor** | ✅ Required | ❌ Not used | ❌ Not used | Financial Modeling Prep API |
 | **Institutional Flow Tracker** | ✅ Required | ❌ Not used | ❌ Not used | Financial Modeling Prep API |

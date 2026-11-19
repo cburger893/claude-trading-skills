@@ -282,6 +282,7 @@ FMP / FINVIZ / Alpaca の有料サブスクをまだ持っていない場合は�
 | **Dual Axis Skill Reviewer** (`dual-axis-skill-reviewer`) | Review skills in any project using a dual-axis method: (1) deterministic code-based checks (structure, scripts, tests, execution safety) and (2) LLM deep review findings. | `local_calculation` — | workflow_step | production |
 | **Earnings Calendar** (`earnings-calendar`) | This skill retrieves upcoming earnings announcements for US stocks using the Financial Modeling Prep (FMP) API. | `fmp` **required** | standalone | production |
 | **Economic Calendar Fetcher** (`economic-calendar-fetcher`) | Fetch upcoming economic events and data releases using FMP API. | `fmp` **required** | standalone | production |
+| **FreeLLMAPI Proxy** (`freellmapi-proxy`) | Set up and use FreeLLMAPI, a self-hosted OpenAI-compatible proxy that aggregates free-tier LLM provider keys behind one endpoint with automatic failover and per-key rate tracking. Third-party skill imported from aradotso/trending-skills (MIT). | `freellmapi_server` **required** | standalone | experimental |
 | **FXMacroData Calendar** (`fxmacrodata-calendar`) | Fetch official-source macro release-calendar events using FXMacroData for trade planning and event-risk filters. | `fxmacrodata` optional | standalone | beta |
 | **Skill Designer** (`skill-designer`) | Design new Claude skills from structured idea specifications. | `local_calculation` — | internal_component | production |
 | **Skill Idea Miner** (`skill-idea-miner`) | Mine Claude Code session logs for skill idea candidates. | `local_calculation` — | internal_component | production |
@@ -357,6 +358,11 @@ Core + Satellite の主導線は上記の「おすすめの始め方」にまと
   - Claude Codeセッションログからスキルアイデア候補をマイニングし、新規性・実現可能性・トレーディング価値でスコアリングして優先順位付きバックログを管理。
   - 週次スキル自動生成パイプラインで使用。手動実行も可能。
   - APIキー不要。
+
+- **FreeLLMAPI Proxy** (`freellmapi-proxy`) — 実験的・サードパーティ
+  - [aradotso/trending-skills](https://github.com/aradotso/trending-skills)（MIT）から導入。トレード専用ではない。
+  - 無料枠LLMプロバイダー（Gemini、Groq、Cerebras、Mistral、OpenRouterなど）のキーを1つの`/v1`エンドポイントに集約し自動フェイルオーバーする、セルフホスト型OpenAI互換プロキシ[FreeLLMAPI](https://github.com/tashfeenahmed/freellmapi)のセットアップと利用をガイド。
+  - ドキュメントのみのスキル（スクリプトなし）。Node.js 20以上と各自の無料枠プロバイダーキーが必要。FMP・FINVIZ・Alpacaは不要。
 
 ## コントリビューター向け自動化
 

@@ -2448,3 +2448,26 @@ skills:
   - final_research_report_json_and_markdown
   - self_contained_audit_bundle
   workflows: []
+- id: freellmapi-proxy
+  display_name: FreeLLMAPI Proxy
+  category: meta
+  status: experimental
+  operational_role:
+    type: standalone
+    rationale: "Invoked directly to set up a free-tier LLM proxy; no trading workflow hands off to it."
+  summary: Set up and use FreeLLMAPI, a self-hosted OpenAI-compatible proxy that aggregates free-tier
+    LLM provider keys behind one endpoint with automatic failover and per-key rate tracking. Third-party
+    skill imported from aradotso/trending-skills (MIT).
+  timeframe: research
+  difficulty: intermediate
+  integrations:
+  - id: freellmapi_server
+    type: web
+    requirement: required
+    note: Self-hosted FreeLLMAPI server (Node.js 20+) plus the user's own free-tier provider keys; no
+      FMP, FINVIZ or Alpaca
+  inputs:
+  - provider_api_keys
+  outputs:
+  - openai_compatible_endpoint
+  workflows: []

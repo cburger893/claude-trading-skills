@@ -280,6 +280,7 @@ The detailed catalog below is **auto-generated** from `skills-index.yaml` by `sc
 | **Dual Axis Skill Reviewer** (`dual-axis-skill-reviewer`) | Review skills in any project using a dual-axis method: (1) deterministic code-based checks (structure, scripts, tests, execution safety) and (2) LLM deep review findings. | `local_calculation` — | workflow_step | production |
 | **Earnings Calendar** (`earnings-calendar`) | This skill retrieves upcoming earnings announcements for US stocks using the Financial Modeling Prep (FMP) API. | `fmp` **required** | standalone | production |
 | **Economic Calendar Fetcher** (`economic-calendar-fetcher`) | Fetch upcoming economic events and data releases using FMP API. | `fmp` **required** | standalone | production |
+| **FreeLLMAPI Proxy** (`freellmapi-proxy`) | Set up and use FreeLLMAPI, a self-hosted OpenAI-compatible proxy that aggregates free-tier LLM provider keys behind one endpoint with automatic failover and per-key rate tracking. Third-party skill imported from aradotso/trending-skills (MIT). | `freellmapi_server` **required** | standalone | experimental |
 | **FXMacroData Calendar** (`fxmacrodata-calendar`) | Fetch official-source macro release-calendar events using FXMacroData for trade planning and event-risk filters. | `fxmacrodata` optional | standalone | beta |
 | **Skill Designer** (`skill-designer`) | Design new Claude skills from structured idea specifications. | `local_calculation` — | internal_component | production |
 | **Skill Idea Miner** (`skill-idea-miner`) | Mine Claude Code session logs for skill idea candidates. | `local_calculation` — | internal_component | production |
@@ -384,6 +385,11 @@ The main Core + Satellite starting path is described above. The examples below s
   - Mines Claude Code session logs for skill idea candidates, scores them for novelty/feasibility/trading value, and maintains a prioritized backlog.
   - Used by the weekly skill auto-generation pipeline. Can also be run manually.
   - No API key required.
+
+- **FreeLLMAPI Proxy** (`freellmapi-proxy`) — experimental, third-party
+  - Imported from [aradotso/trending-skills](https://github.com/aradotso/trending-skills) (MIT). Not trading-specific.
+  - Guides setup and use of [FreeLLMAPI](https://github.com/tashfeenahmed/freellmapi), a self-hosted OpenAI-compatible proxy that pools free-tier LLM provider keys (Gemini, Groq, Cerebras, Mistral, OpenRouter, etc.) behind one `/v1` endpoint with automatic failover.
+  - Documentation-only skill (no scripts). Requires Node.js 20+ and your own free-tier provider keys; no FMP, FINVIZ or Alpaca.
 
 ## Contributor Automation
 

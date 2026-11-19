@@ -10,7 +10,7 @@ permalink: /en/skill-catalog/
 # Skill Catalog
 {: .no_toc }
 
-A comprehensive catalog of all 74 Claude Trading Skills organized by category. Badge indicators show API requirements at a glance.
+A comprehensive catalog of all 75 Claude Trading Skills organized by category. Badge indicators show API requirements at a glance.
 {: .fs-6 .fw-300 }
 
 > Use English skill names ("CANSLIM", "VCP", "FinViz", etc.) for best search results on this page.
@@ -70,6 +70,7 @@ A comprehensive catalog of all 74 Claude Trading Skills organized by category. B
 | `edge-strategy-reviewer` | `internal_component` | — |
 | `exposure-coach` | `workflow_step` | — |
 | `finviz-screener` | `standalone` | Builds a screener URL directly from a user's standalone screening request. |
+| `freellmapi-proxy` | `standalone` | Invoked directly to set up a free-tier LLM proxy; no trading workflow hands off to it. |
 | `ftd-detector` | `standalone` | Runs an independent follow-through-day assessment when requested. |
 | `futures-position-sizer` | `workflow_step` | — |
 | `fxmacrodata-calendar` | `standalone` | Fetches official macro calendar data directly for event-risk planning. |
@@ -237,6 +238,7 @@ A comprehensive catalog of all 74 Claude Trading Skills organized by category. B
 |-------|-------------|-----------------|
 | **Data Quality Checker** | Validates market analysis documents for price scale inconsistencies, date/weekday mismatches, allocation total errors, and unit mismatches. Advisory mode (warnings only) | <span class="badge badge-free">No API</span> |
 | **Dual Axis Skill Reviewer** | Reviews skill quality using dual-axis method: deterministic auto scoring (5-category, 0-100) + optional LLM deep review. Powers the automated skill improvement loop | <span class="badge badge-free">No API</span> |
+| **[FreeLLMAPI Proxy]({{ '/en/skills/freellmapi-proxy/' | relative_url }})** | Third-party skill (aradotso/trending-skills, MIT) for setting up a self-hosted OpenAI-compatible proxy that pools free-tier LLM provider keys with automatic failover. Experimental; not trading-specific | <span class="badge badge-free">No API</span> |
 | **Skill Designer** | Designs new Claude skills from structured idea specifications. Produces complete skill directories (SKILL.md, references, scripts, tests) following repository conventions | <span class="badge badge-free">No API</span> |
 | **Skill Idea Miner** | Mines Claude Code session logs for skill idea candidates. Extracts, scores, and backlogs new skill ideas from recent coding sessions | <span class="badge badge-free">No API</span> |
 | **Skill Integration Tester** | Validates multi-skill workflows defined in CLAUDE.md by checking skill existence, inter-skill data contracts (JSON schema compatibility), and handoff integrity | <span class="badge badge-free">No API</span> |
@@ -356,6 +358,7 @@ A comprehensive catalog of all 74 Claude Trading Skills organized by category. B
 | Scenario Analyzer | -- | -- | -- |
 | Sector Analyst | -- | -- | -- |
 | Signal Postmortem | Optional | -- | -- |
+| FreeLLMAPI Proxy | -- | -- | -- |
 | Skill Designer | -- | -- | -- |
 | Skill Idea Miner | -- | -- | -- |
 | Skill Integration Tester | -- | -- | -- |

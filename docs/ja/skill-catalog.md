@@ -10,7 +10,7 @@ permalink: /ja/skill-catalog/
 # スキル一覧
 {: .no_toc }
 
-全74個のClaude Trading Skillsをカテゴリ別に紹介します。各スキルのAPI要件バッジで、利用に必要な外部サービスをすぐに確認できます。
+全75個のClaude Trading Skillsをカテゴリ別に紹介します。各スキルのAPI要件バッジで、利用に必要な外部サービスをすぐに確認できます。
 {: .fs-6 .fw-300 }
 
 > 検索は英語スキル名（"CANSLIM", "VCP", "FinViz"等）での検索を推奨します。日本語の部分一致検索は制限があります。
@@ -70,6 +70,7 @@ permalink: /ja/skill-catalog/
 | `edge-strategy-reviewer` | `internal_component` | — |
 | `exposure-coach` | `workflow_step` | — |
 | `finviz-screener` | `standalone` | Builds a screener URL directly from a user's standalone screening request. |
+| `freellmapi-proxy` | `standalone` | Invoked directly to set up a free-tier LLM proxy; no trading workflow hands off to it. |
 | `ftd-detector` | `standalone` | Runs an independent follow-through-day assessment when requested. |
 | `futures-position-sizer` | `workflow_step` | — |
 | `fxmacrodata-calendar` | `standalone` | Fetches official macro calendar data directly for event-risk planning. |
@@ -237,6 +238,7 @@ permalink: /ja/skill-catalog/
 |--------|------|---------|
 | **Data Quality Checker** | マーケット分析ドキュメントの価格スケール、日付曜日、配分合計、単位の不整合を検証 | <span class="badge badge-free">API不要</span> |
 | **Dual Axis Skill Reviewer** | デュアルアクシス方式でスキル品質をレビュー。決定論的オートスコアリング + オプションLLMレビュー | <span class="badge badge-free">API不要</span> |
+| **[FreeLLMAPI Proxy]({{ '/ja/skills/freellmapi-proxy/' | relative_url }})** | 無料枠LLMプロバイダーのキーを1つのOpenAI互換エンドポイントに集約し、自動フェイルオーバーするセルフホスト型プロキシのセットアップ用サードパーティスキル（aradotso/trending-skills、MIT）。実験的・トレード専用ではない | <span class="badge badge-free">API不要</span> |
 | **Skill Designer** | 構造化されたアイデア仕様からClaudeスキルを設計。SKILL.md、references、scripts、testsを含む完全なスキルディレクトリを生成 | <span class="badge badge-free">API不要</span> |
 | **Skill Idea Miner** | Claude Codeセッションログからスキルアイデア候補を抽出・スコアリング・バックログ化 | <span class="badge badge-free">API不要</span> |
 | **Skill Integration Tester** | CLAUDE.mdで定義されたマルチスキルワークフローをスキル存在、データ契約互換性、ハンドオフ整合性の観点で検証 | <span class="badge badge-free">API不要</span> |
@@ -353,6 +355,7 @@ permalink: /ja/skill-catalog/
 | Scenario Analyzer | - | - | - |
 | Sector Analyst | - | - | - |
 | Signal Postmortem | 任意 | - | - |
+| FreeLLMAPI Proxy | - | - | - |
 | Skill Designer | - | - | - |
 | Skill Idea Miner | - | - | - |
 | Skill Integration Tester | - | - | - |
